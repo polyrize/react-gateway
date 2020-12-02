@@ -18,8 +18,8 @@
     "modal",
     "dialog"
   ],
-  "author": "",
-  "repository": "https://github.com/polyrize/react-gateway.git",
+  "author": "Polyrize",
+  "repository": "https://github.com/polyrize/react-gateway",
   "license": "BSD-3-Clause",
   "dependencies": {
     "prop-types": "^15.5.0",
