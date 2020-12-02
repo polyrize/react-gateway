@@ -2,7 +2,7 @@
 
 Render React DOM into a new context (aka "Portal")
 
-> This project is a forked update from https://github.com/cloudflare/react-gateway. Simplified test builds and updated with react hooks.
+> This project is a forked update from https://github.com/cloudflare/react-gateway & https://github.com/chardskarth/react-gateway
 
 ## Installation
 
