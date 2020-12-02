@@ -7,7 +7,7 @@ Render React DOM into a new context (aka "Portal")
 ## Installation
 
 ```sh
-$ npm install --save @chardskarth/react-gateway
+$ npm install --save polyrize/react-gateway
 ```
 
 ## Example
@@ -18,7 +18,7 @@ import {
   Gateway,
   GatewayDest,
   GatewayProvider
-} from '@chardskarth/react-gateway';
+} from '@polyrize/react-gateway';
 
 export default class Application extends React.Component {
   render() {
