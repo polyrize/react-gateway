@@ -1,5 +1,5 @@
 {
-  "name": "@chardskarth/react-gateway",
+  "name": "@polyrize/react-gateway",
   "version": "3.0.3",
   "description": "Render React DOM into a new context",
   "main": "lib/index.js",
@@ -18,8 +18,8 @@
     "modal",
     "dialog"
   ],
-  "author": "Richard Domingo <chardskarth@gmail.com>",
-  "repository": "https://github.com/chardskarth/react-gateway",
+  "author": "",
+  "repository": "https://github.com/polyrize/react-gateway.git",
   "license": "BSD-3-Clause",
   "dependencies": {
     "prop-types": "^15.5.0",
