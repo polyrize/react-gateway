@@ -9,7 +9,8 @@
     "format": "jsfmt -w *.js src/ test/",
     "lint": "eslint src/ test/",
     "test": "jest",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "postinstall": "npm run build"
   },
   "keywords": [
     "react",
