@@ -8,7 +8,8 @@
     "example": "browserify example/browser.js -o example/bundle.js -t babelify --debug && babel-node example/server.js",
     "format": "jsfmt -w *.js src/ test/",
     "lint": "eslint src/ test/",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "react",
