@@ -7,7 +7,7 @@ Render React DOM into a new context (aka "Portal")
 ## Installation
 
 ```sh
-$ npm install --save https://github.com/polyrize/react-gateway.git
+$ npm install --save @polyrize/react-gateway
 ```
 
 ## Example
