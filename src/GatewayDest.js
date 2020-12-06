@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {useContext, useEffect, useLayoutEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import GatewayContext from './GatewayContext';
 
-function GatewayDest({ name, component, unmountOnEmpty, ...attrs }) {
+function GatewayDest ({name, component, unmountOnEmpty, ...attrs}) {
   const {addContainer, removeContainer, getContainerChildren} = useContext(GatewayContext);
   const children = getContainerChildren(name);
 
@@ -11,9 +11,9 @@ function GatewayDest({ name, component, unmountOnEmpty, ...attrs }) {
     return () => {
       removeContainer(name);
     };
-  }, []);
+  }, [name]);
 
-  const nonNullChildren = children.filter(it => Boolean(it));
+  const nonNullChildren = React.useMemo(() => children.filter(it => Boolean(it)), [children])
 
   return unmountOnEmpty && !nonNullChildren.length
     ? null

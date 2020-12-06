@@ -8,25 +8,23 @@ import PropTypes from 'prop-types';
 import GatewayContext from './GatewayContext';
 
 function Gateway({ into, children }) {
-  const [gatewayId, setGatewayId] = useState(null);
+  const gatewayId = React.useRef(null)
   const { addGateway, removeGateway, updateGateway } = useContext(GatewayContext);
 
   useEffect(() => {
-    let gatewayId;
     const onSetGatewayId = (gatewayIdParam) => {
-      gatewayId = gatewayIdParam;
-      setGatewayId(gatewayIdParam);
+      gatewayId.current = gatewayIdParam;
     };
     addGateway(into, children, onSetGatewayId);
     return () => {
-      removeGateway(gatewayId);
+      removeGateway(gatewayId.current);
     };
   }, []);
 
   useEffect(() => {
-    if (!gatewayId) { return; }
-    updateGateway(gatewayId, children);
-  }, [gatewayId, children]);
+    if (!gatewayId.current) { return; }
+    updateGateway(gatewayId.current, children);
+  }, [children]);
 
   return null;
 }
