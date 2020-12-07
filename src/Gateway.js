@@ -7,9 +7,9 @@ import React, {
 import PropTypes from 'prop-types';
 import GatewayContext from './GatewayContext';
 
-function Gateway({ into, children }) {
-  const gatewayId = React.useRef(null)
-  const { addGateway, removeGateway, updateGateway } = useContext(GatewayContext);
+function Gateway ({into, children}) {
+  const gatewayId = React.useRef(null);
+  const {addGateway, removeGateway, updateGateway} = useContext(GatewayContext);
 
   useEffect(() => {
     const onSetGatewayId = (gatewayIdParam) => {
@@ -22,7 +22,9 @@ function Gateway({ into, children }) {
   }, []);
 
   useEffect(() => {
-    if (!gatewayId.current) { return; }
+    if (!gatewayId.current) {
+      return;
+    }
     updateGateway(gatewayId.current, children);
   }, [children]);
 

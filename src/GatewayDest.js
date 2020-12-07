@@ -13,7 +13,7 @@ function GatewayDest ({name, component, unmountOnEmpty, ...attrs}) {
     };
   }, [name]);
 
-  const nonNullChildren = React.useMemo(() => children.filter(it => Boolean(it)), [children])
+  const nonNullChildren = React.useMemo(() => children.filter(it => Boolean(it)), [children]);
 
   return unmountOnEmpty && !nonNullChildren.length
     ? null
