@@ -1,14 +1,14 @@
 import React, {
   useContext,
-  useLayoutEffect,
   useEffect,
+  useRef,
   useState
 } from 'react';
 import PropTypes from 'prop-types';
 import GatewayContext from './GatewayContext';
 
 function Gateway ({into, children}) {
-  const gatewayId = React.useRef(null);
+  const gatewayId = useRef(null);
   const {addGateway, removeGateway, updateGateway} = useContext(GatewayContext);
 
   useEffect(() => {
