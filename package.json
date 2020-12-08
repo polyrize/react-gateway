@@ -1,6 +1,6 @@
 {
   "name": "@polyrize/react-gateway",
-  "version": "3.0.9",
+  "version": "3.0.10",
   "description": "Render React DOM into a new context",
   "main": "lib/index.js",
   "scripts": {
