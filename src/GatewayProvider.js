@@ -1,7 +1,27 @@
 import React, {useState, useCallback, useRef} from 'react';
 import PropTypes from 'prop-types';
 import GatewayContext from './GatewayContext';
-function GatewayProvider ({children}) {
+
+
+const removeByKey = (keyToRemove) => {
+	return (removeFrom) => {
+		let clone = Object.assign({}, removeFrom);
+		delete clone[keyToRemove];
+		return clone;
+	};
+};
+
+const getDestNameAndChildId = (gatewayId) => {
+	return gatewayId.split('##');
+};
+
+const verifyDestNameValid = (destName) => {
+	if (destName.indexOf('##') != -1) {
+		throw new Error('dest names should not have ##');
+	}
+};
+
+const GatewayProvider = ({children}) => {
 	const currentId = useRef(0);
 	const [gateways, setGateways] = useState({});
 	const [containers, setContainer] = useState({});
@@ -70,28 +90,10 @@ function GatewayProvider ({children}) {
 			{children}
 		</GatewayContext.Provider>
 	);
-}
+};
 
 GatewayProvider.propTypes = {
 	children: PropTypes.element,
 };
-
-function removeByKey (keyToRemove) {
-	return (removeFrom) => {
-		let clone = Object.assign({}, removeFrom);
-		delete clone[keyToRemove];
-		return clone;
-	};
-}
-
-function getDestNameAndChildId (gatewayId) {
-	return gatewayId.split('##');
-}
-
-function verifyDestNameValid (destName) {
-	if (destName.indexOf('##') != -1) {
-		throw new Error('dest names should not have ##');
-	}
-}
 
 export default GatewayProvider;

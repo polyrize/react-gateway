@@ -7,7 +7,7 @@ import React, {
 import PropTypes from 'prop-types';
 import GatewayContext from './GatewayContext';
 
-function Gateway ({into, children}) {
+const Gateway = ({into, children}) => {
   const gatewayId = useRef(null);
   const {addGateway, removeGateway, updateGateway} = useContext(GatewayContext);
 
@@ -29,7 +29,7 @@ function Gateway ({into, children}) {
   }, [children]);
 
   return null;
-}
+};
 
 Gateway.propTypes = {
   into: PropTypes.string.isRequired,
