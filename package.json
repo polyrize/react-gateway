@@ -5,12 +5,13 @@
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "npm run build:clean && npm run build:base && npm run build:prepare-library",
+    "build:base": "npx vite build",
+    "build:clean": "npx del-cli ./dist/*",
+    "build:prepare-library": "npx copyfiles package.json ./dist && npx copyfiles .npmrc ./dist && npx copyfiles .npmignore ./dist && echo Copied packages",
     "example": "browserify example/browser.js -o example/bundle.js -t babelify --debug && babel-node example/server.js",
-    "format": "jsfmt -w *.js src/ test/",
     "lint": "eslint src/ test/",
-    "test": "jest",
-    "prepublish": "npm run build"
+    "test": "jest"
   },
   "keywords": [
     "react",
@@ -37,7 +38,9 @@
     "@babel/preset-react": "^7.24.1",
     "@babel/preset-typescript": "^7.24.1",
     "@babel/runtime": "^7.8.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/lodash": "^4.17.0",
+    "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^29.7.0",
@@ -69,7 +72,10 @@
     "react-test-renderer": "^17.0.1",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.1",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vite": "^5.2.9",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-tsconfig-paths": "^4.3.2"
   },
   "peerDependencies": {
     "react": ">=17.0.1",
