@@ -1,12 +1,13 @@
-import React, { useContext, useState } from 'react';
+import {describe, it, expect, beforeAll} from '@jest/globals'
+
+import React, {useState} from 'react';
 import { create, act } from 'react-test-renderer';
-import ReactDOMServer from 'react-dom/server';
+
 import {
   Gateway,
   GatewayDest,
   GatewayProvider,
-} from '../src/index.js';
-import GatewayContext from '../src/GatewayContext';
+} from '../src/index';
 
 const withExposedSetState = (Component) => {
   let setState;

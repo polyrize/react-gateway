@@ -1,0 +1,22 @@
+{
+  "references": [{"path": "./tsconfig.lib.json"}, {"path": "./tsconfig.spec.json"}],
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "dist",
+    "allowJs": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "rootDir": "."
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules", "dist"]
+}
